@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.bearya.monitor.center",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 67,
+      "versionName": "1.0",
+      "outputFile": "MonitorCenter_v1.0.67_release.apk"
+    }
+  ],
+  "elementType": "File"
+}

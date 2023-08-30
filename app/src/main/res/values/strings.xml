@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">贝芽运营中心</string>
+    <string name="real_time_dynamic">机器人实时动态</string>
+    <string name="partners_name">合作园所、机构</string>
+    <string name="robots_name">已部署机器人教具</string>
+    <string name="average_name">教育机器人平均使用时长（今日）</string>
+    <string name="sessions_name">教育机器人使用时段分布（今日）</string>
+    <string name="areas_name">教育机器人课时数TOP5（今日）</string>
+    <string name="lessons_name">教育机器人课时数（今日）</string>
+    <string name="customer_service_overview">客户服务概览（本周）</string>
+    <string name="ask_question_five">咨询问题TOP5</string>
+    <string name="after_sale_service_monitor">售后服务监督</string>
+    <string name="problem_solving_percent">问题解决率(%)</string>
+    <string name="emergency_support">应急保障</string>
+    <string name="customer_services_times">客户服务次数(次)</string>
+    <string name="type_desktop">桌面型</string>
+    <string name="type_portable">便携型</string>
+    <string name="train_condition">培训情况</string>
+</resources>

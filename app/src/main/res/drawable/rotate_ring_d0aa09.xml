@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/vector_ringring_d0aa09">
+    <target
+        android:name="inner_ring"
+        android:animation="@animator/rotate_ring" />
+</animated-vector>

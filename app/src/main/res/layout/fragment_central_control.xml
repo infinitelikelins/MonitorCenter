@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/center_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.1333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:srcCompat="@drawable/center_top_title" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/center_partners"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toStartOf="@+id/center_robots"
+        app:layout_constraintHeight_percent="0.3333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/center_top"
+        app:layout_constraintWidth_percent="0.31"
+        app:srcCompat="@drawable/center_middle_top" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/partners_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorTransparent"
+        android:drawableStart="@drawable/name_icon"
+        android:drawablePadding="4dp"
+        android:gravity="center_vertical"
+        android:text="@string/partners_name"
+        android:textColor="@color/colorTextHeader"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/center_partners"
+        app:layout_constraintEnd_toEndOf="@id/center_partners"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintStart_toStartOf="@id/center_partners"
+        app:layout_constraintTop_toTopOf="@id/center_partners"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <com.romainpiel.shimmer.ShimmerTextView
+        android:id="@+id/partners_count"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:background="@color/colorTransparent"
+        android:gravity="center"
+        android:scaleType="fitXY"
+        android:textColor="@color/colorTextCount"
+        android:textSize="96sp"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/center_partners"
+        app:layout_constraintEnd_toEndOf="@id/center_partners"
+        app:layout_constraintHeight_percent="0.17"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/center_partners"
+        app:layout_constraintTop_toTopOf="@id/center_partners"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintWidth_percent="0.18"
+        app:reflectionColor="#fff"
+        tools:text="6405" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@color/colorTransparent"
+        android:text="所"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/partners_count"
+        app:layout_constraintStart_toEndOf="@id/partners_count" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/center_robots"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toStartOf="@id/center_lessons"
+        app:layout_constraintHeight_percent="0.3333"
+        app:layout_constraintStart_toEndOf="@id/center_partners"
+        app:layout_constraintTop_toBottomOf="@id/center_top"
+        app:layout_constraintWidth_percent="0.31"
+        app:srcCompat="@drawable/center_middle_top" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/robots_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorTransparent"
+        android:drawableStart="@drawable/name_icon"
+        android:drawablePadding="4dp"
+        android:gravity="center_vertical"
+        android:text="@string/robots_name"
+        android:textColor="@color/colorTextHeader"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/center_robots"
+        app:layout_constraintEnd_toEndOf="@id/center_robots"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/center_robots"
+        app:layout_constraintTop_toTopOf="@id/center_robots"
+        app:layout_constraintVertical_bias="0.073" />
+
+    <com.romainpiel.shimmer.ShimmerTextView
+        android:id="@+id/robots_count"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:background="@color/colorTransparent"
+        android:gravity="center"
+        android:textColor="@color/colorTextCount"
+        android:textSize="96sp"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/center_robots"
+        app:layout_constraintEnd_toEndOf="@id/center_robots"
+        app:layout_constraintHeight_percent="0.17"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/center_robots"
+        app:layout_constraintTop_toTopOf="@id/center_robots"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintWidth_percent="0.18"
+        app:reflectionColor="#fff"
+        tools:text="3549" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/colorTransparent"
+        android:text="套"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/robots_count"
+        app:layout_constraintStart_toEndOf="@id/robots_count" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/center_lessons"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3333"
+        app:layout_constraintStart_toEndOf="@id/center_robots"
+        app:layout_constraintTop_toBottomOf="@id/center_top"
+        app:layout_constraintWidth_percent="0.31"
+        app:srcCompat="@drawable/center_middle_top" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lessons_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorTransparent"
+        android:drawableStart="@drawable/name_icon"
+        android:drawablePadding="4dp"
+        android:gravity="center_vertical"
+        android:text="@string/lessons_name"
+        android:textColor="@color/colorTextHeader"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/center_lessons"
+        app:layout_constraintEnd_toEndOf="@id/center_lessons"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintStart_toStartOf="@id/center_lessons"
+        app:layout_constraintTop_toTopOf="@id/center_lessons"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <com.romainpiel.shimmer.ShimmerTextView
+        android:id="@+id/lessons_count"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:background="@color/colorTransparent"
+        android:gravity="center"
+        android:textColor="@color/colorTextCount"
+        android:textSize="96sp"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/center_lessons"
+        app:layout_constraintEnd_toEndOf="@id/center_lessons"
+        app:layout_constraintHeight_percent="0.17"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/center_lessons"
+        app:layout_constraintTop_toTopOf="@id/center_lessons"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintWidth_percent="0.18"
+        app:reflectionColor="#fff"
+        tools:text="2539" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/colorTransparent"
+        android:text="节"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/lessons_count"
+        app:layout_constraintStart_toEndOf="@id/lessons_count" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/center_areas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/center_bottom"
+        app:layout_constraintEnd_toEndOf="@id/center_partners"
+        app:layout_constraintHeight_percent="0.3333"
+        app:layout_constraintStart_toStartOf="@id/center_partners"
+        app:layout_constraintTop_toBottomOf="@id/center_partners"
+        app:layout_constraintWidth_percent="0.31"
+        app:srcCompat="@drawable/center_middle_bottom" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/areas_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorTransparent"
+        android:drawableStart="@drawable/name_icon"
+        android:drawablePadding="4dp"
+        android:gravity="center_vertical"
+        android:text="@string/areas_name"
+        android:textColor="@color/colorTextHeader"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/center_areas"
+        app:layout_constraintEnd_toEndOf="@id/center_areas"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintStart_toStartOf="@id/center_areas"
+        app:layout_constraintTop_toTopOf="@id/center_areas"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <com.github.mikephil.charting.charts.HorizontalBarChart
+        android:id="@+id/horizontalBarChart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/center_areas"
+        app:layout_constraintEnd_toEndOf="@id/center_areas"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/center_areas"
+        app:layout_constraintTop_toBottomOf="@id/areas_name"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/center_sessions"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/center_bottom"
+        app:layout_constraintEnd_toEndOf="@id/center_robots"
+        app:layout_constraintHeight_percent="0.3333"
+        app:layout_constraintStart_toStartOf="@id/center_robots"
+        app:layout_constraintTop_toBottomOf="@id/center_robots"
+        app:layout_constraintWidth_percent="0.31"
+        app:srcCompat="@drawable/center_middle_bottom" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sessions_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorTransparent"
+        android:drawableStart="@drawable/name_icon"
+        android:drawablePadding="4dp"
+        android:gravity="center_vertical"
+        android:text="@string/sessions_name"
+        android:textColor="@color/colorTextHeader"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/center_sessions"
+        app:layout_constraintEnd_toEndOf="@id/center_sessions"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintStart_toStartOf="@id/center_sessions"
+        app:layout_constraintTop_toTopOf="@id/center_sessions"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="@id/center_sessions"
+        app:layout_constraintEnd_toEndOf="@id/center_sessions"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/center_sessions"
+        app:layout_constraintTop_toBottomOf="@id/sessions_name"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/center_average"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/center_bottom"
+        app:layout_constraintEnd_toEndOf="@id/center_lessons"
+        app:layout_constraintHeight_percent="0.3333"
+        app:layout_constraintStart_toStartOf="@id/center_lessons"
+        app:layout_constraintTop_toBottomOf="@id/center_lessons"
+        app:layout_constraintWidth_percent="0.31"
+        app:srcCompat="@drawable/center_middle_bottom" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/average_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorTransparent"
+        android:drawableStart="@drawable/name_icon"
+        android:drawablePadding="4dp"
+        android:gravity="center_vertical"
+        android:text="@string/average_name"
+        android:textColor="@color/colorTextHeader"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/center_average"
+        app:layout_constraintEnd_toEndOf="@id/center_average"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintStart_toStartOf="@id/center_average"
+        app:layout_constraintTop_toTopOf="@id/center_average"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/center_average"
+        app:layout_constraintEnd_toEndOf="@id/center_average"
+        app:layout_constraintStart_toStartOf="@id/center_average"
+        app:layout_constraintTop_toBottomOf="@id/average_name" />
+
+    <LinearLayout
+        android:id="@+id/center_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/shape_rectangle_08c9da_border2_corner4"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/center_average"
+        app:layout_constraintHeight_percent="0.1333"
+        app:layout_constraintStart_toStartOf="@id/center_areas"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/shape_rectangle_ff0000_solid_corner8"
+            android:gravity="center"
+            android:lines="1"
+            android:padding="8dp"
+            android:text="@string/real_time_dynamic"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical"
+            tools:ignore="NestedWeights">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/time1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="20"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:textColor="@color/gray_6"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="12:36:17" />
+
+                <com.hanks.htextview.evaporate.EvaporateTextView
+                    android:id="@+id/message1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="76"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="幼儿园版 19BY518208100577 中国福建省福州市仓山区八箴路 在特力林科技大厦附近" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/status1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:textColor="@color/sunrise_yellow_5"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform"
+                    tools:text="离线" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/time2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="20"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:textColor="@color/gray_6"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="12:36:17" />
+
+                <com.hanks.htextview.evaporate.EvaporateTextView
+                    android:id="@+id/message2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="76"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="幼儿园版 19BY518208100577 中国福建省福州市仓山区八箴路 在特力林科技大厦附近" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/status2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:textColor="@color/sunrise_yellow_5"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform"
+                    tools:text="离线" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextClock
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:background="@color/colorTransparent"
+        android:format12Hour="yyyy/MM/dd E"
+        android:format24Hour="yyyy/MM/dd E"
+        android:textColor="@color/calendula_gold_5"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/center_lessons"
+        app:layout_constraintEnd_toEndOf="@id/center_lessons" />
+
+    <TextClock
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTransparent"
+        android:format12Hour="HH:mm:ss"
+        android:format24Hour="HH:mm:ss"
+        android:textColor="@color/calendula_gold_5"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/date"
+        app:layout_constraintEnd_toEndOf="@id/date"
+        app:layout_constraintStart_toStartOf="@id/date" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

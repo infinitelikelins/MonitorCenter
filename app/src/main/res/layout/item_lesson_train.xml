@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorTransparent"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:weightSum="100">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/province"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="15"
+        android:background="@drawable/shape_rectangle_00000000_border1"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLength="12"
+        android:minWidth="16dp"
+        android:minHeight="16dp"
+        android:paddingTop="@dimen/dp_4"
+        android:paddingBottom="@dimen/dp_4"
+        android:scaleType="fitCenter"
+        android:singleLine="true"
+        android:text="福建"
+        android:textColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/city"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:background="@drawable/shape_rectangle_00000000_border1"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLength="12"
+        android:paddingTop="@dimen/dp_4"
+        android:paddingBottom="@dimen/dp_4"
+        android:singleLine="true"
+        android:text="福州"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/school"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="40"
+        android:background="@drawable/shape_rectangle_00000000_border1"
+        android:gravity="center"
+        android:ellipsize="end"
+        android:paddingStart="2dp"
+        android:paddingTop="@dimen/dp_4"
+        android:paddingEnd="2dp"
+        android:paddingBottom="@dimen/dp_4"
+        android:lines="1"
+        android:text="耶鲁国际幼儿园在哪里的地区"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="30"
+        android:background="@drawable/shape_rectangle_00000000_border1"
+        android:gravity="center"
+        android:lines="1"
+        android:paddingStart="4dp"
+        android:paddingTop="@dimen/dp_4"
+        android:paddingEnd="4dp"
+        android:paddingBottom="@dimen/dp_4"
+        android:text="2022.01.01"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform" />
+
+</LinearLayout>
