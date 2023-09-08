@@ -15,7 +15,8 @@ object ApiUrl : HttpRetrofit(BuildConfig.ApiUrl) {
     /**
      * 课件激活验证
      */
-    suspend fun activateVerify(code: String = "0"): HttpResult<Int>? = api?.activateVerify(code)
+    suspend fun activateVerify(code: String = "0"): HttpResult<Int>? =
+        try { api?.activateVerify(code) }catch (e: Exception) { null }
 
 }
 
@@ -25,12 +26,17 @@ object DataUrl : HttpRetrofit(BuildConfig.DataUrl) {
         retrofit.create(DataService::class.java)
     }
 
-    suspend fun customerService(): HttpResult<CustomerService>? = api?.customerService()
+    suspend fun customerService(): HttpResult<CustomerService>? =
+        try { api?.customerService() } catch (e: Exception) { null }
 
-    suspend fun lessonTrain(): HttpResult<LessonTrain>? = api?.lessonTrain()
+    suspend fun lessonTrain(): HttpResult<LessonTrain>? =
+        try { api?.lessonTrain() } catch (e: Exception) { null }
 
-    suspend fun centralControl(): HttpResult<CentralControl>? = api?.centralControl()
+    suspend fun centralControl(): HttpResult<CentralControl>? =
+        try { api?.centralControl() } catch (e: Exception) { null }
 
-    suspend fun trainLog(pageIndex: Int): HttpResult<TrainLog>? = api?.trainLog(pageIndex ,15)
+    suspend fun trainLog(pageIndex: Int): HttpResult<TrainLog>? =
+        try { api?.trainLog(pageIndex, 15) } catch (e: Exception) { null }
+
 
 }

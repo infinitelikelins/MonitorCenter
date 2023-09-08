@@ -6,6 +6,7 @@ import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
 import com.tencent.bugly.crashreport.CrashReport
+import com.tencent.mmkv.MMKV
 
 class App :Application() {
 
@@ -21,9 +22,10 @@ class App :Application() {
                 .build()
         ) {
             override fun isLoggable(priority: Int, tag: String?): Boolean {
-                return true
+                return BuildConfig.DEBUG
             }
         })
+        MMKV.initialize(this)
     }
 
 }

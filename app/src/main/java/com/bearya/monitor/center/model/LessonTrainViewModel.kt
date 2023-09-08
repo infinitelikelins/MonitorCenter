@@ -10,24 +10,26 @@ import com.bearya.monitor.center.data.bean.LessonTrain
 import com.bearya.monitor.center.data.bean.TrainLog
 import com.bearya.monitor.center.http.DataUrl
 import com.bearya.monitor.center.library.ext.setData
+import com.tencent.mmkv.MMKV
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 
 class LessonTrainViewModel : ViewModel() {
 
     private val position: MutableLiveData<Int> = MutableLiveData<Int>(1)
+    private val kv: MMKV by lazy { MMKV.defaultMMKV() }
 
     val lessonTrain: LiveData<LessonTrain?> = liveData(Dispatchers.IO) {
-        repeat(1000000) {
-            val data = DataUrl.lessonTrain()?.data
-            emit(data)
-            delay(1000 * 45)
+        repeat(Int.MAX_VALUE) { _->
+            DataUrl.lessonTrain()?.data?.also { emit(it) }
+            val delayMillis = kv.decodeInt("interface", 30) * 1000L + 5000L
+            delay(delayMillis)
         }
     }
 
-    val trainLog: LiveData<TrainLog?> = position.switchMap {
+    val trainLog: LiveData<TrainLog?> = position.switchMap { pos ->
         liveData(Dispatchers.IO) {
-            emit(DataUrl.trainLog(it)?.data)
+            DataUrl.trainLog(pos)?.data?.also { emit(it) }
         }
     }
 
@@ -39,7 +41,7 @@ class LessonTrainViewModel : ViewModel() {
     }
 
     fun next() {
-        if (((count.value ?: 0) > (position.value ?: 0)) ) {
+        if (((count.value ?: 0) > (position.value ?: 0))) {
             position.value = position.value?.plus(1)
         } else position.value = 1
     }

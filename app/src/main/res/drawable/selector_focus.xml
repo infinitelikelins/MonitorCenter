@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/shape_rectangle_ffffff_border2_corner4" android:state_focused="false" />
+
+    <item android:drawable="@drawable/shape_rectangle_44ffffff_corner16" android:state_focused="true" />
+
+</selector>

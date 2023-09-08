@@ -385,6 +385,7 @@
         app:layout_constraintVertical_bias="1">
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dyna"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"

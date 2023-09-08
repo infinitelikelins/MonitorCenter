@@ -61,7 +61,7 @@ class LessonTrainFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        Log.d("-Fragment","onResume")
+        Log.d("-Fragment", "onResume")
         centerViewModel.onKeyListener = {
             if (it == KeyEvent.KEYCODE_DPAD_DOWN) viewModel.next()
             else if (it == KeyEvent.KEYCODE_DPAD_UP) viewModel.up()
@@ -70,7 +70,7 @@ class LessonTrainFragment : Fragment() {
 
     override fun onPause() {
         super.onPause()
-        Log.d("-Fragment","onPause")
+        Log.d("-Fragment", "onPause")
         centerViewModel.onKeyListener = null
     }
 
@@ -81,8 +81,8 @@ class LessonTrainFragment : Fragment() {
 
             generatePieChartData(bindView.pieLeftUp, it?.courseUseToday?.list)
             generatePieChartData(bindView.pieLeftDown, it?.courseUseSum?.list)
-            generateBarChartData(bindView.barRightUp, it?.courseUseToday?.list)
-            generateBarChartData(bindView.barRightDown, it?.courseUseSum?.list)
+            generateBarChartData(bindView.barRightUp, it?.courseUseToday?.list?.sortedWith { o1, o2 -> o1.num.compareTo(o2.num) })
+            generateBarChartData(bindView.barRightDown, it?.courseUseSum?.list?.sortedWith { o1, o2 -> o1.num.compareTo(o2.num) })
 
         }
 
@@ -92,7 +92,7 @@ class LessonTrainFragment : Fragment() {
         bindView.trainList.start()
 
         lifecycleScope.launch {
-            repeat(10000) {
+            repeat(Int.MAX_VALUE) {
                 delay(1000 * 25)
                 centerViewModel.onKeyListener?.invoke(KeyEvent.KEYCODE_DPAD_DOWN)
             }
@@ -202,7 +202,16 @@ class LessonTrainFragment : Fragment() {
 
         val lists = list?.mapIndexed { index, baseCount -> BarEntry(index.toFloat(), baseCount.num.toFloat()) }
 
-        chart.axisLeft.axisMaximum = list?.maxBy { it.num }?.num?.plus(50f) ?: 100f
+        chart.axisLeft.axisMaximum = list?.maxBy { it.num }?.num
+            ?.let {
+                if (it > 100000) it.plus(100000f)
+                else if (it > 60000) it.plus(60000f)
+                else if (it > 30000) it.plus(30000f)
+                else if (it > 10000) it.plus(10000f)
+                else if (it > 1000) it.plus(1000f)
+                else if (it > 100) it.plus(100f)
+                else it.plus(20f)
+            } ?: 1000f
 
         chart.xAxis.valueFormatter = object : ValueFormatter() {
             override fun getAxisLabel(value: Float, axis: AxisBase?): String {

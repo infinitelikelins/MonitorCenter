@@ -45,7 +45,7 @@ android {
         }
 
         release {
-            debuggable true
+            debuggable false
             minifyEnabled false
             buildConfigField "String", "DataUrl", DATA_URL
             buildConfigField "String", "ApiUrl", API_URL
@@ -150,4 +150,6 @@ dependencies {
     implementation 'com.hanks:htextview-scale:0.1.6'
     implementation 'com.romainpiel.shimmer:library:1.4.0@aar'
     implementation 'com.tencent.bugly:crashreport:4.1.9.2'
+    implementation 'com.tencent:mmkv:1.2.15'
+
 }

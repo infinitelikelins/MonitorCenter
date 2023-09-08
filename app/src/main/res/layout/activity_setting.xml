@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    android:descendantFocusability="afterDescendants"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:focusable="false"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="设置中心"
+        android:textColor="@color/colorTextHeader"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform" />
+
+    <RadioGroup
+        android:id="@+id/pagination"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp100"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:checkedButton="@id/manual"
+        android:descendantFocusability="afterDescendants"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:focusable="false"
+            android:gravity="center"
+            android:text="翻页模式"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/auto"
+            android:layout_width="@dimen/dp150"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/selector_radio"
+            android:button="@null"
+            android:focusable="true"
+            android:gravity="center"
+            android:nextFocusLeft="@id/manual"
+            android:nextFocusRight="@id/manual"
+            android:nextFocusUp="@id/interface_30"
+            android:nextFocusDown="@id/switch_1"
+            android:padding="8dp"
+            android:text="自动翻页"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/manual"
+            android:layout_width="@dimen/dp150"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/selector_radio"
+            android:button="@null"
+            android:focusable="true"
+            android:gravity="center"
+            android:nextFocusLeft="@id/auto"
+            android:nextFocusRight="@id/auto"
+            android:nextFocusUp="@id/interface_30"
+            android:nextFocusDown="@id/switch_1"
+            android:padding="8dp"
+            android:text="手动翻页"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/switch_frequency"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp100"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:checkedButton="@id/switch_1"
+        android:descendantFocusability="afterDescendants"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="翻页频率"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/switch_1"
+            android:layout_width="@dimen/dp150"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/selector_radio"
+            android:button="@null"
+            android:focusable="true"
+            android:gravity="center"
+            android:nextFocusLeft="@id/switch_10"
+            android:nextFocusRight="@id/switch_3"
+            android:nextFocusUp="@id/auto"
+            android:nextFocusDown="@id/interface_30"
+            android:padding="8dp"
+            android:text="1分钟"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/switch_3"
+            android:layout_width="@dimen/dp150"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/selector_radio"
+            android:button="@null"
+            android:focusable="true"
+            android:gravity="center"
+            android:nextFocusLeft="@id/switch_1"
+            android:nextFocusRight="@id/switch_5"
+            android:nextFocusUp="@id/auto"
+            android:nextFocusDown="@id/interface_30"
+            android:padding="8dp"
+            android:text="3分钟"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/switch_5"
+            android:layout_width="@dimen/dp150"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/selector_radio"
+            android:button="@null"
+            android:focusable="true"
+            android:gravity="center"
+            android:nextFocusLeft="@id/switch_3"
+            android:nextFocusRight="@id/switch_10"
+            android:nextFocusUp="@id/auto"
+            android:nextFocusDown="@id/interface_30"
+            android:padding="8dp"
+            android:text="5分钟"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/switch_10"
+            android:layout_width="@dimen/dp150"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/selector_radio"
+            android:button="@null"
+            android:focusable="true"
+            android:gravity="center"
+            android:nextFocusLeft="@id/switch_5"
+            android:nextFocusRight="@id/switch_1"
+            android:nextFocusUp="@id/auto"
+            android:nextFocusDown="@id/interface_30"
+            android:padding="8dp"
+            android:text="10分钟"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/interface_frequency"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp100"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:checkedButton="@id/interface_30"
+        android:descendantFocusability="afterDescendants"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="刷新频率"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/interface_30"
+            android:layout_width="@dimen/dp150"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/selector_radio"
+            android:button="@null"
+            android:gravity="center"
+            android:nextFocusLeft="@id/interface_300"
+            android:nextFocusRight="@id/interface_60"
+            android:nextFocusUp="@id/switch_1"
+            android:nextFocusDown="@id/auto"
+            android:padding="8dp"
+            android:text="30秒钟"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/interface_60"
+            android:layout_width="@dimen/dp150"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/selector_radio"
+            android:button="@null"
+            android:gravity="center"
+            android:nextFocusLeft="@id/interface_30"
+            android:nextFocusRight="@id/interface_180"
+            android:nextFocusUp="@id/switch_1"
+            android:nextFocusDown="@id/auto"
+            android:padding="8dp"
+            android:text="1分钟"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/interface_180"
+            android:layout_width="@dimen/dp150"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/selector_radio"
+            android:button="@null"
+            android:gravity="center"
+            android:nextFocusLeft="@id/interface_60"
+            android:nextFocusRight="@id/interface_300"
+            android:nextFocusUp="@id/switch_1"
+            android:nextFocusDown="@id/auto"
+            android:padding="8dp"
+            android:text="3分钟"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/interface_300"
+            android:layout_width="@dimen/dp150"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/selector_radio"
+            android:button="@null"
+            android:gravity="center"
+            android:nextFocusLeft="@id/interface_180"
+            android:nextFocusRight="@id/interface_30"
+            android:nextFocusUp="@id/switch_1"
+            android:nextFocusDown="@id/auto"
+            android:padding="8dp"
+            android:text="5分钟"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform" />
+
+    </RadioGroup>
+
+</LinearLayout>

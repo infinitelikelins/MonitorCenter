@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.bearya.monitor.center.activity.SettingActivity
 import com.bearya.monitor.center.data.bean.BaseCount
 import com.bearya.monitor.center.data.bean.RobotLog
 import com.bearya.monitor.center.databinding.FragmentCentralControlBinding
@@ -53,6 +54,8 @@ class CentralControlFragment : Fragment() {
         initBarChart()
         initHorizontalBarChart()
         initPieChart()
+
+        bindView.dyna.setOnClickListener { SettingActivity.start(requireContext()) }
 
     }
 
@@ -111,7 +114,6 @@ class CentralControlFragment : Fragment() {
 
         bindView.horizontalBarChart.xAxis.granularity = 1f
         bindView.horizontalBarChart.axisLeft.axisMinimum = 0f
-        bindView.horizontalBarChart.axisLeft.axisMaximum = 100f
 
         bindView.horizontalBarChart.axisLeft.setDrawZeroLine(false)
         //去掉左侧Y轴刻度
@@ -181,6 +183,17 @@ class CentralControlFragment : Fragment() {
 
     private fun generateHorizontalBarChartData(list: List<BaseCount>?) {
 
+        bindView.horizontalBarChart.axisLeft.axisMaximum = list?.maxBy { it.num }?.num
+            ?.let {
+                if (it > 100000) it.plus(100000f)
+                else if (it > 60000) it.plus(60000f)
+                else if (it > 30000) it.plus(30000f)
+                else if (it > 10000) it.plus(10000f)
+                else if (it > 1000) it.plus(1000f)
+                else if (it > 100) it.plus(100f)
+                else it.plus(20f)
+            } ?: 1000f
+
         bindView.horizontalBarChart.xAxis.valueFormatter = object : ValueFormatter() {
             override fun getAxisLabel(value: Float, axis: AxisBase?): String {
                 return list?.get(value.toInt())?.name ?: ""
@@ -238,7 +251,7 @@ class CentralControlFragment : Fragment() {
 //            bindView.robotsCount.setTextColor(color)
 //            bindView.lessonsCount.setTextColor(color)
 
-            generateHorizontalBarChartData(it?.courseSectionList?.list?.reversed())
+            generateHorizontalBarChartData(it?.courseSectionList?.list?.sortedWith { o1, o2 -> o1.num.compareTo(o2.num) })
             generatePieChartData(it?.courseSectionDuration?.list)
             generateBarChartData(it?.courseSectionHour?.list)
             changeDyn(it?.robotLog)
@@ -284,7 +297,7 @@ class CentralControlFragment : Fragment() {
                 var index = 0
 
                 while (true) {
-                    Logger.d("$index")
+
                     val robotLog1 = list[index]
                     bindView.time1.text = formatter.format(robotLog1.online * 1000)
                     bindView.message1.animateText("${robotLog1.title} ${robotLog1.code} ${robotLog1.address}")

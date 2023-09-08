@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/shape_rectangle_ffffff_border2_corner4"
+        android:state_checked="false" />
+
+    <item android:drawable="@drawable/shape_rectangle_08c9da_solid_corner4"
+        android:state_checked="true" />
+
+</selector>

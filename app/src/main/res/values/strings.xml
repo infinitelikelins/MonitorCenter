@@ -16,4 +16,8 @@
     <string name="type_desktop">桌面型</string>
     <string name="type_portable">便携型</string>
     <string name="train_condition">培训情况</string>
+    <string name="enter_licence">请输入授权码</string>
+    <string name="activate">验证</string>
+    <string name="licence_code">授权码激活</string>
+
 </resources>
